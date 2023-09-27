@@ -1,7 +1,15 @@
 :root 
 {
-  --primary:#d81e5b;
+  --primary:black;
+  --secondary:yellow;
+  --operators:grey;
+  --numbers:darkgrey;
 
+}
+
+@font-face {
+  font-family: digital;
+  src: url(fonts/DS-DIGI.TTF);
 }
 
 *
@@ -9,7 +17,7 @@
   margin:0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: digital;
 }
 
 body{
@@ -22,4 +30,22 @@ body{
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  color: white;
+}
+
+.calculator
+{
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--primary);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 2px 64px rgba(0,0,0,0.2);
+}
+
+.display
+{
+  padding:16px;
+  text-align: right;
+  background-color: var(--numbers);
 }
