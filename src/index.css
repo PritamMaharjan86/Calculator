@@ -1,8 +1,8 @@
 :root 
 {
   --primary:black;
-  --secondary:yellow;
-  --operators:grey;
+  --secondary:#10d3ec;
+  --operators:rgba(50, 151, 19, 0.726);
   --numbers:darkgrey;
 
 }
@@ -31,6 +31,7 @@ body{
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 50px;
 }
 
 .calculator
@@ -38,9 +39,10 @@ body{
   width: 100%;
   max-width: 400px;
   background-color: var(--primary);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 2px 64px rgba(0,0,0,0.2);
+ 
 }
 
 .display
@@ -48,4 +50,48 @@ body{
   padding:16px;
   text-align: right;
   background-color: var(--numbers);
+}
+
+button
+{
+  appearance: none;
+  border:none;
+  outline:none;
+  color:white;
+  font-size: 20px;
+  padding:16px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover
+{
+  opacity: 0.9;
+}
+
+.operators
+{
+  display: flex;
+}
+
+.operators button
+
+{
+  flex: 1 1 0%;
+  background-color: var(--operators);
+}
+
+.digits
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digits button
+{
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  background-color: var(--numbers);
+
+
 }
