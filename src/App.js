@@ -58,6 +58,18 @@ const deleteAll  = () =>
   setCalc(value);
 }
 
+const clear  = () =>
+{
+  if(calc == '')
+  {
+    return;
+  }
+
+  const value = calc.slice(0,-1);
+  setCalc(value);
+}
+
+
   return(
     <div className="App">
       <div className="calculator">
@@ -69,16 +81,19 @@ const deleteAll  = () =>
           <button onClick={()=>updateCalc('-')}>-</button>
           <button onClick={()=>updateCalc('*')}>*</button>
           <button onClick={()=>updateCalc('/')}>/</button>
-          <button onClick={deleteAll}>DEL</button>
+         
         </div>
         
         <div className="digits">
           {createDigits()}
-          <button onClick={()=>updateCalc('0')}>0</button>
           <button onClick={()=>updateCalc('.')}>.</button>
-
+          <button onClick={()=>updateCalc('0')}>0</button>
           <button onClick={calculate}>=</button>
+          <button onClick={deleteAll}>AC</button>
+          <button onClick={clear}>C</button>
+         
         </div>
+
       </div>
     </div>
   )
