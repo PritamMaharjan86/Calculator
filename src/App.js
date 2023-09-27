@@ -44,6 +44,10 @@ const createDigits = () =>
 
 const calculate = () =>
 {
+  if(calc == '')
+  {
+    return;
+  }
   setCalc(eval(calc).toString())
 }
 
