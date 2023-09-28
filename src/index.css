@@ -1,9 +1,9 @@
 :root 
 {
-  --primary:black;
+  --primary:#1C1C1C;
   --secondary:white;
-  --operators:rgba(50, 151, 19, 0.726);
-  --numbers:darkgrey;
+  --operators:#FF9500	;
+  --numbers:#505050;
   --hover:grey;
 
 }
@@ -22,7 +22,7 @@
 }
 
 body{
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 .App
@@ -31,7 +31,7 @@ body{
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--secondary);
   font-size: 50px;
   
  
@@ -42,37 +42,37 @@ body{
   width: 100%;
   max-width: 400px;
   background-color: var(--primary);
-  border-radius: 12px;
+  border-radius: 22px;
   overflow: hidden;
   box-shadow: 0px 2px 64px rgba(0,0,0,0.2);
-  border: 3px solid var(--primary);
+  border: 2px solid var(--secondary);
 }
 
 .display
 {
-  padding:16px;
+  padding:50px;
   text-align: right;
-  background-color: var(--numbers);
-  
+  background-color: var(--primary);
 }
 
 button
 {
   appearance: none;
   border:none;
-  outline:none;
-  color:white;
+  outline:none; 
   font-size: 40px;
   padding:10px;
   cursor: pointer;
   transition: 0.4s;
-  margin:2px;
+  margin:6px;
+  border-radius: 82px;
+ 
 }
 
 button:hover
 {
   opacity: 0.9;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .operators
@@ -86,6 +86,7 @@ button:hover
 {
   flex: 1 1 30%;
   background-color: var(--operators);
+  color:var(--secondary);
 }
 
 .digits
@@ -99,14 +100,15 @@ button:hover
 {
   flex: 1 1 30%;
   max-width: 100%;
-  color:black;
+  color:var(--secondary);
   background-color: var(--numbers);
-
-
+  border: 2px solid var(--numbers);
 }
 
 .digits button:hover
 {
   color:white;
-  background-color: black;
+  border: 2px solid var(--numbers);
+  background-color: var(--primary);
 }
+
