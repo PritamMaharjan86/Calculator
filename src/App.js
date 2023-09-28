@@ -48,7 +48,7 @@ const calculate = () =>
   {
     return;
   }
-  
+
   setCalc(eval(calc).toString())
 }
 
@@ -93,10 +93,12 @@ const clear  = () =>
           {createDigits()}
           <button onClick={()=>updateCalc('.')}>.</button>
           <button onClick={()=>updateCalc('0')}>0</button>
-        
-          <button onClick={deleteAll}>AC</button>
           <button onClick={clear}>C</button>
+          <button onClick={deleteAll}>AC</button>
           <button onClick={calculate}>=</button>
+          
+          
+          
         </div>
 
     
