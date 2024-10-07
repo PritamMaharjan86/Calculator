@@ -1,114 +1,110 @@
-:root 
-{
-  --primary:#1C1C1C;
-  --secondary:white;
-  --operators:#FF9500	;
-  --numbers:#505050;
-  
 
-}
-
-@font-face {
-  font-family: digital;
-  src: url(fonts/DS-DIGI.TTF);
-}
-
-*
-{
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: digital;
-}
-
-body{
-  background-color: var(--primary);
-}
-
-.App
-{
-  display:flex;
-  min-height: 100vh;
-  align-items: center;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
   justify-content: center;
-  color: var(--secondary);
-  font-size: 50px;
-  
- 
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.calculator
-{
-  width: 100%;
-  max-width: 400px;
-  background-color: var(--primary);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0px 2px 64px rgba(0,0,0,0.2);
-  border: 2px solid var(--secondary);
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.display
-{
-  padding:50px;
+
+.calculator {
+  width: 320px;
+  height: 100%;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.calculator .display {
+  background-color: #222;
+  color: white;
+  font-size: 2.5rem;
   text-align: right;
-  background-color: var(--primary);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-button
-{
-  appearance: none;
-  border:none;
-  outline:none; 
-  font-size: 40px;
-  padding:10px;
+.calculator .operators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.calculator .digits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+
+.calculator button {
+  background-color: #444;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: 0.4s;
-  margin:6px;
-  border-radius: 82px;
- 
+  transition: all 0.3s ease;
 }
 
-button:hover
-{
-  opacity: 0.9;
-  color: var(--primary);
+.calculator button:hover {
+  background-color: #555;
 }
 
-.operators
-{
-  display: flex;
- 
+.calculator button:active {
+  box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.operators button
 
-{
-  flex: 1 1 30%;
-  background-color: var(--operators);
-  color:var(--secondary);
+.calculator .digits button:nth-last-child(1) {
+  background-color: #ff9500;
+  color: white;
+  grid-column: span 2;
 }
 
-.digits
-{
-  display: flex;
-  flex-wrap:wrap;
-  
+.calculator .digits button:nth-last-child(1):hover {
+  background-color: #e68a00;
 }
 
-.digits button
-{
-  flex: 1 1 30%;
-  max-width: 100%;
-  color:var(--secondary);
-  background-color: var(--numbers);
-  border: 2px solid var(--numbers);
+.calculator .digits button:nth-child(10),
+.calculator .digits button:nth-child(11) {
+  background-color: #d9534f;
 }
 
-.digits button:hover
-{
-  color:white;
-  border: 2px solid var(--numbers);
-  background-color: var(--primary);
+.calculator .digits button:nth-child(10):hover,
+.calculator .digits button:nth-child(11):hover {
+  background-color: #c9302c;
 }
 
+.calculator .digits button:nth-child(-n+9) {
+  background-color: #666;
+}
+
+.calculator .digits button:nth-child(-n+9):hover {
+  background-color: #777;
+}
