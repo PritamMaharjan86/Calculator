@@ -99,8 +99,8 @@ function App() {
       <div className="calculator">
         <div className="display">
 
-          {calc || "0"}
-          {result ? <span className="result"> = {result}</span> : ""}
+          {calc || "0" || result}
+          
         </div>
         <div className="operators">
           <button onClick={() => updateCalc('+')}>+</button>
